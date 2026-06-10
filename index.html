@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Villa D’Italia — Restaurante italiano de luxo. Tradição, sofisticação e alta gastronomia." />
+  <link rel="icon" type="image/png" href="italia.png">
+  <meta name="theme-color" content="#4A0E1A" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Villa D’Italia" />
+  <meta property="og:description" content="Restaurante italiano de luxo — cardápio digital, reservas e promoções." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://villarditalia.example.com" />
+
+  <title>Villa D’Italia — Restaurante Italiano de Luxo</title>
+
+  <!-- Favicon (data-uri SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g' cx='30%25' cy='30%25'%3E%3Cstop offset='0' stop-color='%23D4AF37'/%3E%3Cstop offset='1' stop-color='%234A0E1A'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='30' fill='url(%23g)'/%3E%3Cpath d='M18 44c6-14 22-14 28 0' stroke='%23F5E6CC' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M22 22h20' stroke='%23F5E6CC' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='26' cy='22' r='2.8' fill='%23F5E6CC'/%3E%3Ccircle cx='38' cy='22' r='2.8' fill='%23F5E6CC'/%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="java.js"></script>
+</head>
+<body>
+  <!-- Animated background shapes -->
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="spark s1"></span>
+    <span class="spark s2"></span>
+  </div>
+
+  <!-- LOADING SCREEN -->
+  <div id="loading" class="loading" role="status" aria-live="polite" aria-label="Carregando">
+    <div class="loading__card">
+      <div class="logo-anim" aria-hidden="true">
+        <div class="logo-anim__ring"></div>
+        <div class="logo-anim__core"></div>
+        <div class="logo-anim__leaf"></div>
+      </div>
+
+      <h1 class="loading__title">Villa D’Italia</h1>
+      <div class="loading__subtitle">Alta gastronomia italiana</div>
+
+      <div class="loading__progress" aria-hidden="true">
+        <div class="loading__bar" id="loadingBar"></div>
+      </div>
+
+      <div class="loading__row">
+        <div class="spinner" aria-hidden="true"></div>
+        <div class="loading__percent" id="loadingPercent">0%</div>
+      </div>
+    </div>
+  </div>
+
+  <header id="top" class="header">
+    <div class="nav-wrap" id="navWrap">
+      <div class="container nav">
+        <a class="brand" href="#in%C3%ADcio" aria-label="Villa D’Italia">
+          <span class="brand__mark" aria-hidden="true">VD</span>
+          <span class="brand__text">Villa <b>D’Italia</b></span>
+        </a>
+
+        <nav class="menu" aria-label="Menu principal">
+          <a href="#inicio" class="nav-link">Início</a>
+          <a href="#cardapio" class="nav-link">Cardápio</a>
+          <a href="#sobre" class="nav-link">Sobre</a>
+          <a href="#chefes" class="nav-link">Chefes</a>
+          <a href="#galeria" class="nav-link">Galeria</a>
+          <a href="#avaliacoes" class="nav-link">Avaliações</a>
+          <a href="#reservas" class="nav-link">Reservas</a>
+          <a href="#eventos" class="nav-link">Eventos</a>
+          <a href="#contato" class="nav-link">Contato</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#reservas" class="btn btn--gold btn--small" data-ripple>Reservar</a>
+          <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile" id="mobileMenu" aria-hidden="true">
+      <div class="container mobile__inner">
+        <div class="mobile__links">
+          <a href="#inicio" class="nav-link">Início</a>
+          <a href="#cardapio" class="nav-link">Cardápio</a>
+          <a href="#sobre" class="nav-link">Sobre</a>
+          <a href="#chefes" class="nav-link">Chefes</a>
+          <a href="#galeria" class="nav-link">Galeria</a>
+          <a href="#avaliacoes" class="nav-link">Avaliações</a>
+          <a href="#reservas" class="nav-link">Reservas</a>
+          <a href="#eventos" class="nav-link">Eventos</a>
+          <a href="#contato" class="nav-link">Contato</a>
+        </div>
+        <div class="mobile__cta">
+          <a href="#cardapio" class="btn btn--gold" data-ripple>Ver Cardápio</a>
+          <a href="#reservas" class="btn btn--ghost" data-ripple>Reservar Mesa</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+      <div class="hero__media" data-parallax>
+        <img
+          class="hero__img lazy"
+          alt="Ambiente italiano premium"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Cdefs%3E%3CradialGradient id='g' cx='35%25' cy='30%25'%3E%3Cstop offset='0' stop-color='%23D4AF37' stop-opacity='0.65'/%3E%3Cstop offset='1' stop-color='%234A0E1A'/%3E%3C/radialGradient%3E%3ClinearGradient id='l' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23121/212'/%3E%3Cstop offset='1' stop-color='%234A0E1A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23l)'/%3E%3Ccircle cx='520' cy='260' r='420' fill='url(%23g)'/%3E%3Cpath d='M0 760C240 640 460 820 720 700s520-60 880-210v410H0Z' fill='%23121/212' opacity='0.55'/%3E%3C/svg%3E"
+          loading="eager"
+        />
+        <div class="hero__overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="container hero__content">
+        <div class="hero__kicker glassm">
+          <span class="kicker-dot" aria-hidden="true"></span>
+          Tradição italiana • Alta gastronomia
+        </div>
+
+        <h2 class="hero__title reveal">Um banquete de sofisticação</h2>
+        <p class="hero__subtitle reveal">
+          Villa D’Italia combina tradição, ingredientes selecionados e uma experiência cinematográfica — da primeira mordida ao último gole.
+        </p>
+
+        <div class="hero__slogan reveal">
+          <span class="typing" data-typing>Traduzimos tradição em arte</span>
+        </div>
+
+        <div class="hero__buttons">
+          <a href="#cardapio" class="btn btn--gold" data-ripple>Ver Cardápio</a>
+          <a href="#reservas" class="btn btn--ghost" data-ripple>Reservar Mesa</a>
+          <button class="btn btn--white" id="btnPedido" data-ripple>Fazer Pedido</button>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat glassm reveal" data-counter data-value="18">18<span>+</span><div class="stat__label">anos de tradição</div></div>
+          <div class="stat glassm reveal" data-counter data-value="4.9">4.9<span>/5</span><div class="stat__label">avaliação média</div></div>
+          <div class="stat glassm reveal" data-counter data-value="1200">1200<span>+</span><div class="stat__label">momentos memoráveis</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO CAROUSEL -->
+    <section class="section" aria-label="Destaques" style="padding-top:0">
+      <div class="container">
+        <div class="carousel" id="heroCarousel">
+          <div class="carousel__header">
+            <h3 class="section__title reveal">Sabores que encantam</h3>
+            <div class="carousel__controls">
+              <button class="icon-btn" id="heroPrev" aria-label="Anterior">‹</button>
+              <div class="dots" id="heroDots" aria-label="Navegação"></div>
+              <button class="icon-btn" id="heroNext" aria-label="Próximo">›</button>
+            </div>
+          </div>
+
+          <div class="carousel__viewport" data-touch>
+            <div class="carousel__track" id="heroTrack">
+              <article class="slide">
+                <div class="slide__media lazy" data-bg="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234A0E1A'/%3E%3Cstop offset='1' stop-color='%23121212'/%3E%3C/linearGradient%3E%3CradialGradient id='r' cx='35%25' cy='35%25'%3E%3Cstop offset='0' stop-color='%23D4AF37' stop-opacity='0.75'/%3E%3Cstop offset='1' stop-color='%23D4AF37' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='420' cy='240' r='260' fill='url(%23r)'/%3E%3Cpath d='M120 520c120-140 300-120 430-40s200 160 420 50v180H120Z' fill='%23F5E6CC' opacity='0.22'/%3E%3C/svg%3E"></div>
+                <div class="slide__content">
+                  <h4>Massas artesanais</h4>
+                  <p>Carbonara cremosa, nhoque leve e lasanha feita na casa.</p>
+                  <a href="#cardapio" class="btn btn--tiny btn--gold" data-ripple>Explorar</a>
+                </div>
+              </article>
+
+              <article class="slide">
+                <div class="slide__media lazy" data-bg="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23121212'/%3E%3Cstop offset='1' stop-color='%234A0E1A'/%3E%3C/linearGradient%3E%3CradialGradient id='r' cx='55%25' cy='35%25'%3E%3Cstop offset='0' stop-color='%23D4AF37' stop-opacity='0.85'/%3E%3Cstop offset='1' stop-color='%23D4AF37' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='650' cy='210' r='290' fill='url(%23r)'/%3E%3Cpath d='M0 530c170-110 280-70 420 10s260 150 520 30v200H0Z' fill='%23F5E6CC' opacity='0.18'/%3E%3C/svg%3E"></div>
+                <div class="slide__content">
+                  <h4>Forno &amp; autenticidade</h4>
+                  <p>Margherita clássica, Quatro Queijos e sabores da estação.</p>
+                  <a href="#cardapio" class="btn btn--tiny btn--gold" data-ripple>Explorar</a>
+                </div>
+              </article>
+
+              <article class="slide">
+                <div class="slide__media lazy" data-bg="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234A0E1A'/%3E%3Cstop offset='1' stop-color='%23121212'/%3E%3C/linearGradient%3E%3CradialGradient id='r' cx='40%25' cy='25%25'%3E%3Cstop offset='0' stop-color='%23D4AF37' stop-opacity='0.8'/%3E%3Cstop offset='1' stop-color='%23D4AF37' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='470' cy='190' r='300' fill='url(%23r)'/%3E%3Cpath d='M0 600c220-120 360-60 510 0s260 120 690-40v240H0Z' fill='%23F5E6CC' opacity='0.16'/%3E%3C/svg%3E"></div>
+                <div class="slide__content">
+                  <h4>Vinhos selecionados</h4>
+                  <p>Tintos, brancos, rosés e espumantes — harmonias perfeitas.</p>
+                  <a href="#cardapio" class="btn btn--tiny btn--gold" data-ripple>Explorar</a>
+                </div>
+              </article>
+
+              <article class="slide">
+                <div class="slide__media lazy" data-bg="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23121212'/%3E%3Cstop offset='1' stop-color='%234A0E1A'/%3E%3C/linearGradient%3E%3CradialGradient id='r' cx='45%25' cy='40%25'%3E%3Cstop offset='0' stop-color='%23D4AF37' stop-opacity='0.85'/%3E%3Cstop offset='1' stop-color='%23D4AF37' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Ccircle cx='560' cy='270' r='310' fill='url(%23r)'/%3E%3Cpath d='M0 520c180-120 340-80 500 0s260 130 700 10v220H0Z' fill='%23F5E6CC' opacity='0.14'/%3E%3C/svg%3E"></div>
+                <div class="slide__content">
+                  <h4>Ambiente inesquecível</h4>
+                  <p>Luzes douradas, música suave e momentos para celebrar.</p>
+                  <a href="#galeria" class="btn btn--tiny btn--gold" data-ripple>Ver Galeria</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARDÁPIO (com filtros e sistema de compra/carrinho) -->
+    <section id="cardapio" class="section">
+      <div class="container">
+        <div class="section__head">
+          <div class="section__left">
+            <h3 class="section__title reveal">Cardápio Digital</h3>
+            <p class="section__subtitle reveal">Selecione categoria, veja detalhes e monte seu pedido com carrinho e cupons.</p>
+          </div>
+          <div class="section__right">
+            <div class="cart-pill" id="cartPill" aria-label="Carrinho">
+              <span class="cart-pill__icon" aria-hidden="true">🛒</span>
+              <span class="cart-pill__text">Carrinho</span>
+              <span class="cart-pill__count" id="cartCount">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filters" role="tablist" aria-label="Filtros do cardápio">
+          <button class="filter is-active" data-filter="all">Todas</button>
+          <button class="filter" data-filter="massas">Massas</button>
+          <button class="filter" data-filter="pizzas">Pizzas</button>
+          <button class="filter" data-filter="risotos">Risotos</button>
+          <button class="filter" data-filter="entradas">Entradas</button>
+          <button class="filter" data-filter="sobremesas">Sobremesas</button>
+          <button class="filter" data-filter="vinhos">Vinhos</button>
+          <button class="filter" data-filter="bebidas">Bebidas</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- CART DRAWER -->
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+      <div class="cart-drawer__overlay" id="cartOverlay"></div>
+      <div class="cart-drawer__panel" role="dialog" aria-modal="true" aria-label="Carrinho">
+        <div class="cart-drawer__top">
+          <div>
+            <h3 class="cart-drawer__title">Seu Carrinho</h3>
+            <p class="cart-drawer__muted" id="cartSubtitle">Itens prontos para finalizar</p>
+          </div>
+          <button class="icon-btn" id="cartClose" aria-label="Fechar">✕</button>
+        </div>
+
+        <div class="cart-drawer__body">
+          <div class="cart-items" id="cartItems"></div>
+
+          <div class="cart-coupon">
+            <label for="coupon">Cupom</label>
+            <div class="coupon-row">
+              <input id="coupon" type="text" placeholder="EX: VILLA10" autocomplete="off" />
+              <button class="btn btn--gold btn--small" id="applyCoupon" data-ripple>Aplicar</button>
+            </div>
+            <div class="cart-coupon__msg" id="couponMsg" aria-live="polite"></div>
+          </div>
+
+          <div class="cart-totals">
+            <div class="tot-row"><span>Subtotal</span><b id="subtotal">R$ 0,00</b></div>
+            <div class="tot-row"><span>Desconto</span><b id="discount">R$ 0,00</b></div>
+            <div class="tot-row tot-row--grand"><span>Total</span><b id="total">R$ 0,00</b></div>
+          </div>
+
+          <div class="cart-actions">
+            <button class="btn btn--ghost" id="clearCart" data-ripple>Limpar carrinho</button>
+            <button class="btn btn--gold" id="checkout" data-ripple>Finalizar pedido</button>
+          </div>
+
+          <div class="cart-note">
+            <span class="dot"></span> Finalize para receber confirmação e estimativa de preparo.
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MENU ITEM DETAILS MODAL -->
+    <div class="modal" id="detailsModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal__overlay" id="detailsOverlay"></div>
+      <div class="modal__panel" aria-label="Detalhes do prato">
+        <button class="modal__close" id="detailsClose" aria-label="Fechar">✕</button>
+        <div class="modal__grid">
+          <div class="modal__media" id="detailsImg"></div>
+          <div class="modal__content">
+            <div class="modal__badge" id="detailsCategory"></div>
+            <h3 class="modal__title" id="detailsName"></h3>
+            <p class="modal__desc" id="detailsDesc"></p>
+
+            <div class="modal__meta">
+              <div class="rating" id="detailsRating"></div>
+              <div class="price" id="detailsPrice"></div>
+            </div>
+
+            <h4 class="modal__ingredients">Ingredientes</h4>
+            <ul class="modal__list" id="detailsIngredients"></ul>
+
+            <div class="modal__actions">
+              <div class="qty" aria-label="Quantidade">
+                <button class="qty__btn" data-qty="dec" aria-label="Diminuir">−</button>
+                <input class="qty__input" id="detailsQty" type="number" min="1" value="1" />
+                <button class="qty__btn" data-qty="inc" aria-label="Aumentar">+</button>
+              </div>
+              <button class="btn btn--gold" id="detailsAdd" data-ripple>Comprar</button>
+              <button class="btn btn--ghost" id="detailsAddDirect" data-ripple>Adicionar ao carrinho</button>
+            </div>
+
+            <div class="modal__hint">Transação segura • Confirmação instantânea</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h3 class="section__title reveal">Sobre a Villa D’Italia</h3>
+            <p class="section__subtitle reveal">Tradição italiana com uma assinatura moderna e refinada.</p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card glassm reveal">
+            <h4>História</h4>
+            <p id="aboutStory">
+              Nascemos do desejo de trazer para você a elegância da cozinha italiana — do aroma do molho ao calor do forno.
+              Cada receita carrega uma memória, e cada salão é um convite para celebrar.
+            </p>
+
+            <div class="timeline" aria-label="Linha do tempo">
+              <div class="t-item"><span class="t-dot"></span><b>2008</b><p>Início da Villa D’Italia com massas artesanais.</p></div>
+              <div class="t-item"><span class="t-dot"></span><b>2012</b><p>Forno a lenha e carta de vinhos autoral.</p></div>
+              <div class="t-item"><span class="t-dot"></span><b>2018</b><p>Ambiente premium e experiência cinematográfica.</p></div>
+              <div class="t-item"><span class="t-dot"></span><b>2024</b><p>Cardápio digital + carrinho e cupons.</p></div>
+            </div>
+          </div>
+
+          <div class="about-side">
+            <div class="about-mission glassm reveal">
+              <h4>Missão</h4>
+              <p>Encantar com alta gastronomia, tradição e hospitalidade impecável.</p>
+            </div>
+            <div class="about-mission glassm reveal">
+              <h4>Visão</h4>
+              <p>Ser referência de luxo italiano com experiências cada vez mais memoráveis.</p>
+            </div>
+            <div class="about-mission glassm reveal">
+              <h4>Valores</h4>
+              <ul class="about-list">
+                <li>Ingredientes selecionados</li>
+                <li>Tradição com criatividade</li>
+                <li>Atendimento premium</li>
+                <li>Excelência em cada detalhe</li>
+              </ul>
+            </div>
+
+            <div class="about-photo reveal">
+              <div class="about-photo__frame" aria-hidden="true">
+                <div class="about-photo__shine"></div>
+              </div>
+              <img class="lazy" alt="Fotos do ambiente" loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900'%3E%3Cdefs%3E%3ClinearGradient id='l' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234A0E1A'/%3E%3Cstop offset='1' stop-color='%23121212'/%3E%3C/linearGradient%3E%3CradialGradient id='r' cx='35%25' cy='25%25'%3E%3Cstop offset='0' stop-color='%23D4AF37' stop-opacity='0.75'/%3E%3Cstop offset='1' stop-color='%23D4AF37' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23l)'/%3E%3Ccircle cx='420' cy='230' r='310' fill='url(%23r)'/%3E%3Cpath d='M190 720c140-140 350-170 520-60s230 280 370 100v210H190Z' fill='%23F5E6CC' opacity='0.18'/%3E%3C/svg%3E" />
+            </div>
+          </div>
+        </div>
+
+        <div class="counters reveal" aria-label="Indicadores">
+          <div class="counter glassm"><span class="counter__num" data-counter data-value="25">0</span><span class="counter__suffix">+</span><p>Receitas exclusivas</p></div>
+          <div class="counter glassm"><span class="counter__num" data-counter data-value="60">0</span><span class="counter__suffix">%</span><p>Ingredientes locais</p></div>
+          <div class="counter glassm"><span class="counter__num" data-counter data-value="120">0</span><span class="counter__suffix">min</span><p>Média de experiência</p></div>
+          <div class="counter glassm"><span class="counter__num" data-counter data-value="98">0</span><span class="counter__suffix">%</span><p>Satisfação</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHEFES -->
+    <section id="chefes" class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h3 class="section__title reveal">Nossos Chefes</h3>
+            <p class="section__subtitle reveal">Técnica, paixão e um toque autoral em cada prato.</p>
+          </div>
+        </div>
+
+        <div class="chef-grid" id="chefGrid"></div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h3 class="section__title reveal">Galeria</h3>
+            <p class="section__subtitle reveal">Comidas, vinhos e momentos — com filtros e lightbox.</p>
+          </div>
+        </div>
+
+        <div class="gallery-filters" role="tablist" aria-label="Filtros da galeria">
+          <button class="gfilter is-active" data-gfilter="all">Todos</button>
+          <button class="gfilter" data-gfilter="comidas">Comidas</button>
+          <button class="gfilter" data-gfilter="sobremesas">Sobremesas</button>
+          <button class="gfilter" data-gfilter="vinhos">Vinhos</button>
+          <button class="gfilter" data-gfilter="ambiente">Ambiente</button>
+          <button class="gfilter" data-gfilter="eventos">Eventos</button>
+        </div>
+
+        <div class="gallery" id="gallery">
+          <!-- items inject -->
+        </div>
+      </div>
+    </section>
+
+    <!-- AVALIAÇÕES -->
+    <section id="avaliacoes" class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h3 class="section__title reveal">Avaliações</h3>
+            <p class="section__subtitle reveal">Experiências reais com nota e comentários.</p>
+          </div>
+        </div>
+
+        <div class="review-carousel" id="reviewCarousel">
+          <div class="review-track" id="reviewTrack"></div>
+          <div class="review-dots" id="reviewDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTOS -->
+    <section id="eventos" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h3 class="section__title reveal">Eventos &amp; Degustações</h3>
+            <p class="section__subtitle reveal">Noites temáticas e experiências premium.</p>
+          </div>
+        </div>
+
+        <div class="event-grid">
+          <article class="event glassm reveal">
+            <h4>Noite Italiana</h4>
+            <p>Menu especial + música ao vivo e brindes.</p>
+            <div class="event__meta"><span class="gold">Sábados</span><span>19h</span></div>
+          </article>
+          <article class="event glassm reveal">
+            <h4>Música ao vivo</h4>
+            <p>Trio instrumental e atmosfera cinematográfica.</p>
+            <div class="event__meta"><span class="gold">Quartas</span><span>20h</span></div>
+          </article>
+          <article class="event glassm reveal">
+            <h4>Degustação de vinhos</h4>
+            <p>Harmonizações com guias e amostras selecionadas.</p>
+            <div class="event__meta"><span class="gold">Quintas</span><span>19h30</span></div>
+          </article>
+          <article class="event glassm reveal">
+            <h4>Eventos especiais</h4>
+            <p>Comemorações com menu sob medida.</p>
+            <div class="event__meta"><span class="gold">Sob consulta</span><span>—</span></div>
+          </article>
+        </div>
+
+        <div class="promo-grid" id="promos">
+          <article class="promo glassm reveal">
+            <h4>Cupom &amp; combos</h4>
+            <p>Descontos sazonais para iniciantes e recorrentes.</p>
+            <div class="promo__chips"><span class="chip">VILLA10</span><span class="chip">FRETEGRÁTIS</span></div>
+          </article>
+          <article class="promo glassm reveal">
+            <h4>Promoções sazonais</h4>
+            <p>Menus que mudam com a estação e harmonizam com vinhos.</p>
+            <div class="promo__chips"><span class="chip">OUTONO DOURADO</span><span class="chip">VERÃO ITALIANO</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVAS -->
+    <section id="reservas" class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h3 class="section__title reveal">Reservas</h3>
+            <p class="section__subtitle reveal">Garanta sua mesa com validação e feedback visual.</p>
+          </div>
+        </div>
+
+        <form class="form form--grid glassm reveal" id="reservationForm" novalidate>
+          <div class="form__col">
+            <label for="rNome">Nome</label>
+            <input id="rNome" name="nome" type="text" placeholder="Seu nome" required />
+            <div class="field-msg" data-for="rNome"></div>
+          </div>
+          <div class="form__col">
+            <label for="rEmail">E-mail</label>
+            <input id="rEmail" name="email" type="email" placeholder="voce@exemplo.com" required />
+            <div class="field-msg" data-for="rEmail"></div>
+          </div>
+          <div class="form__col">
+            <label for="rTel">Telefone</label>
+            <input id="rTel" name="telefone" type="tel" placeholder="(00) 00000-0000" required />
+            <div class="field-msg" data-for="rTel"></div>
+          </div>
+          <div class="form__col">
+            <label for="rData">Data</label>
+            <input id="rData" name="data" type="date" required />
+            <div class="field-msg" data-for="rData"></div>
+          </div>
+          <div class="form__col">
+            <label for="rHora">Horário</label>
+            <input id="rHora" name="horario" type="time" required />
+            <div class="field-msg" data-for="rHora"></div>
+          </div>
+          <div class="form__col">
+            <label for="rPessoas">Pessoas</label>
+            <input id="rPessoas" name="pessoas" type="number" min="1" max="30" value="2" required />
+            <div class="field-msg" data-for="rPessoas"></div>
+          </div>
+
+          <div class="form__col form__full">
+            <label for="rObs">Observações</label>
+            <textarea id="rObs" name="obs" rows="4" placeholder="Alergias, preferências, ocasião..."></textarea>
+          </div>
+
+          <div class="form__actions form__full">
+            <button class="btn btn--gold" type="submit" data-ripple>Confirmar Reserva</button>
+            <div class="form__status" id="reservationStatus" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h3 class="section__title reveal">Contato</h3>
+            <p class="section__subtitle reveal">Fale conosco, acompanhe promoções e encontre a gente.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card glassm reveal">
+            <h4>Informações</h4>
+            <ul class="contact-list">
+              <li><b>Endereço:</b> Av. das Taças, 123 — Centro</li>
+              <li><b>Telefone:</b> (11) 99999-9999</li>
+              <li><b>WhatsApp:</b> (11) 98888-7777</li>
+              <li><b>E-mail:</b> reservas@villarditalia.com</li>
+              <li><b>Horário:</b> Ter–Dom • 18h–23h</li>
+            </ul>
+
+            <div class="contact-social">
+              <a class="social" href="#" aria-label="Instagram" data-social><span>IG</span></a>
+              <a class="social" href="#" aria-label="Facebook" data-social><span>FB</span></a>
+              <a class="social" href="#" aria-label="TikTok" data-social><span>TT</span></a>
+              <a class="social" href="#" aria-label="YouTube" data-social><span>YT</span></a>
+            </div>
+          </div>
+
+          <div class="map glassm reveal" aria-label="Mapa">
+            <div class="map__frame">
+              <iframe
+                title="Mapa Villa D’Italia"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-46.655%2C-23.561%2C-46.635%2C-23.548&layer=mapnik&marker=-46.645%2C-23.554"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="newsletter glassm reveal" aria-label="Newsletter">
+          <div class="newsletter__left">
+            <h4>Newsletter</h4>
+            <p>Receba novidades, cupons exclusivos e eventos da casa.</p>
+          </div>
+          <form class="newsletter__form" id="newsletterForm" novalidate>
+            <div class="form-row">
+              <input name="nome" id="nNome" type="text" placeholder="Nome" required />
+              <input name="email" id="nEmail" type="email" placeholder="E-mail" required />
+            </div>
+            <button class="btn btn--gold" type="submit" data-ripple>Inscrever</button>
+            <div class="form__status" id="newsletterStatus" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CHEF ORDER CTA modal placeholder: uses same Pedido button -->
+  <div class="modal" id="pedidoModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__overlay" id="pedidoOverlay"></div>
+    <div class="modal__panel" aria-label="Fazer pedido">
+      <button class="modal__close" id="pedidoClose" aria-label="Fechar">✕</button>
+      <div class="modal__grid">
+        <div class="modal__media">
+          <div class="glassm" style="padding:18px">
+            <h3 style="margin:0;">Pedido rápido</h3>
+            <p style="color:rgba(245,230,204,.82);margin:10px 0 0">Monte seu pedido pelo cardápio e finalize no carrinho.</p>
+            <div style="height:10px"></div>
+            <div class="micro">Dica: use cupons no carrinho.</div>
+          </div>
+        </div>
+        <div class="modal__content">
+          <div class="modal__badge">Começar agora</div>
+          <h3 class="modal__title">Fazer Pedido</h3>
+          <p class="modal__desc">Selecione itens, ajuste quantidade e finalize. Total e desconto são calculados em tempo real.</p>
+          <div class="modal__actions">
+            <a class="btn btn--gold" href="#cardapio" data-ripple>Ir para o Cardápio</a>
+            <button class="btn btn--ghost" id="pedidoOpenCart" data-ripple>Ver Carrinho</button>
+          </div>
+          <div class="modal__hint">Animações + checkout com feedback</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" aria-label="Rodapé">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="brand brand--footer">
+          <span class="brand__mark" aria-hidden="true">VD</span>
+          <span class="brand__text">Villa <b>D’Italia</b></span>
+        </div>
+        <p class="footer__muted">Luxo italiano, tradição e atendimento premium.</p>
+        <div class="footer__legal">© <span id="year"></span> Villa D’Italia. Todos os direitos reservados.</div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Links rápidos</h4>
+        <a href="#inicio">Início</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#chefes">Chefes</a>
+        <a href="#galeria">Galeria</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Informações legais</h4>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+        <a href="#">LGPD</a>
+        <a href="#">Acessibilidade</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Redes &amp; Newsletter</h4>
+        <div class="footer__social">
+          <a class="social" href="#" aria-label="Instagram"><span>IG</span></a>
+          <a class="social" href="#" aria-label="Facebook"><span>FB</span></a>
+          <a class="social" href="#" aria-label="TikTok"><span>TT</span></a>
+          <a class="social" href="#" aria-label="YouTube"><span>YT</span></a>
+        </div>
+        <div class="footer__muted">Receba ofertas exclusivas.</div>
+        <a href="#contato" class="btn btn--ghost btn--small" data-ripple>Assinar</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-row">
+        <span class="muted">Sitemap pronto • SEO básico • Estrutura semântica</span>
+        <a href="#top" class="to-top" data-ripple>↑ Topo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" aria-live="polite" aria-atomic="true" role="status"></div>
+
+  <!-- Image Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox__overlay" id="lightboxOverlay"></div>
+    <div class="lightbox__panel">
+      <button class="lightbox__close" id="lightboxClose" aria-label="Fechar">✕</button>
+      <img id="lightboxImg" alt="Imagem ampliada" loading="lazy" />
+      <div class="lightbox__cap" id="lightboxCap"></div>
+      <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+      <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Próximo">›</button>
+    </div>
+  </div>
+
+  <!-- Skeleton to hint loading -->
+  <div class="skeleton" id="skeleton" aria-hidden="true"></div>
+</body>
+</html>
+
